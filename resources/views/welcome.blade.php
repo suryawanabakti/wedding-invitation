@@ -533,7 +533,7 @@
                                 <div id="carousel-image-{{ $loop->iteration }}" data-aos="fade-up" data-aos-duration="1500" class="carousel slide mt-4" data-bs-ride="carousel">
                                     <div class="carousel-indicators">
                                         @foreach ($chunk as $gallery)
-                                            <button type="button" data-bs-target="#carousel-image-{{ $loop->parent->iteration }}" data-bs-slide-to="{{ $loop->index }}" @if ($loop->first) class="active" aria-current="true" @endif aria-label="Slide {{ $loop->iteration }}"></button>
+                                            <button type="button"  data-bs-slide-to="{{ $loop->index }}" @if ($loop->first) class="active" aria-current="true" @endif aria-label="Slide {{ $loop->iteration }}"></button>
                                         @endforeach
                                     </div>
 
