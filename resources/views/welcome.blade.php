@@ -780,12 +780,7 @@
             <div class="modal-content rounded-4 border border-0">
                 <div class="modal-body p-0">
                     <div class="d-flex position-absolute top-0 end-0">
-                        <a class="btn d-flex justify-content-center align-items-center bg-overlay-auto p-2 m-1 rounded-circle border shadow-sm z-1" role="button" target="_blank" rel="noopener" href="#" id="button-modal-click">
-                            <i class="fa-solid fa-arrow-up-right-from-square" style="width: 1em !important;"></i>
-                        </a>
-                        <a class="btn d-flex justify-content-center align-items-center bg-overlay-auto p-2 m-1 rounded-circle border shadow-sm z-1" role="button" href="#" download id="button-modal-download">
-                            <i class="fa-solid fa-download" style="width: 1em !important;"></i>
-                        </a>
+                        
                         <button class="btn d-flex justify-content-center align-items-center bg-overlay-auto p-2 m-1 rounded-circle border shadow-sm z-1" data-bs-dismiss="modal">
                             <i class="fa-solid fa-circle-xmark" style="width: 1em !important;"></i>
                         </button>
