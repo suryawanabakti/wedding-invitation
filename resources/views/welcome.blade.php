@@ -351,7 +351,7 @@
                         <a href="{{ $wedding->googleCalendarUrl() }}"
                             target="_blank"
                             class="btn btn-outline-auto btn-sm shadow rounded-pill px-3 py-1" style="font-size: 0.825rem;">
-                            <i class="fa-solid fa-calendar-check me-2"></i>Save Google Calendar
+                            <i class="fa-solid fa-calendar-check me-2"></i>Simpan di Kalender
                         </a>
 
                         <div class="d-flex justify-content-center align-items-center mt-4 mb-2">
@@ -581,33 +581,30 @@
 
                                     <div class="d-flex justify-content-between align-items-center mt-2">
                                         <p class="m-0 p-0" style="font-size: 0.95rem;"><i class="fa-regular fa-user fa-sm me-1"></i><span>{{ $gift->holder_name }}</span></p>
-                                        <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0" style="font-size: 0.75rem;" data-bs-toggle="collapse" data-bs-target="#collapse-gift-{{ $gift->id }}"><i class="fa-solid fa-circle-info fa-sm me-1"></i>Info</button>
                                     </div>
 
-                                    <div class="collapse" id="collapse-gift-{{ $gift->id }}">
-                                        <hr class="my-2 py-1">
+                                    <hr class="my-2 py-1">
 
-                                        @if ($giftType === 'transfer')
-                                            <p class="m-0" style="font-size: 0.9rem;"><i class="fa-solid fa-building-columns me-1"></i><span>{{ $gift->bank_name }}</span></p>
-                                            <div class="d-flex justify-content-between align-items-center mt-2">
-                                                <p class="m-0 p-0" style="font-size: 0.85rem;"><i class="fa-solid fa-credit-card me-1"></i><span>{{ $gift->account_number }}</span></p>
-                                                <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0" style="font-size: 0.75rem;" data-copy="{{ $gift->account_number }}"><i class="fa-solid fa-copy"></i></button>
-                                            </div>
-                                        @elseif ($giftType === 'qris')
-                                            <div class="d-flex justify-content-center align-items-center">
-                                                <img src="{{ $gift->imageUrl('image') }}" alt="donate" class="img-fluid rounded-3 mx-auto bg-white" id="qris-photo">
-                                            </div>
-                                        @else
-                                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                                <p class="m-0 p-0" style="font-size: 0.85rem;"><i class="fa-solid fa-phone-volume me-1"></i><span>{{ $gift->phone }}</span></p>
-                                                <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0" style="font-size: 0.75rem;" data-copy="{{ $gift->phone }}"><i class="fa-solid fa-copy"></i></button>
-                                            </div>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <p class="my-0 p-0 text-truncate me-2" style="font-size: 0.85rem;"><i class="fa-solid fa-location-dot me-1"></i><span>{{ $gift->address }}</span></p>
-                                                <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0" style="font-size: 0.75rem;" data-copy="{{ $gift->address }}"><i class="fa-solid fa-copy"></i></button>
-                                            </div>
-                                        @endif
-                                    </div>
+                                    @if ($giftType === 'transfer')
+                                        <p class="m-0" style="font-size: 0.9rem;"><i class="fa-solid fa-building-columns me-1"></i><span>{{ $gift->bank_name }}</span></p>
+                                        <div class="d-flex justify-content-between align-items-center mt-2">
+                                            <p class="m-0 p-0" style="font-size: 0.85rem;"><i class="fa-solid fa-credit-card me-1"></i><span>{{ $gift->account_number }}</span></p>
+                                            <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0" style="font-size: 0.75rem;" data-copy="{{ $gift->account_number }}"><i class="fa-solid fa-copy"></i></button>
+                                        </div>
+                                    @elseif ($giftType === 'qris')
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <img src="{{ $gift->imageUrl('image') }}" alt="donate" class="img-fluid rounded-3 mx-auto bg-white" id="qris-photo">
+                                        </div>
+                                    @else
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <p class="m-0 p-0" style="font-size: 0.85rem;"><i class="fa-solid fa-phone-volume me-1"></i><span>{{ $gift->phone }}</span></p>
+                                            <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0" style="font-size: 0.75rem;" data-copy="{{ $gift->phone }}"><i class="fa-solid fa-copy"></i></button>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <p class="my-0 p-0 text-truncate me-2" style="font-size: 0.85rem;"><i class="fa-solid fa-location-dot me-1"></i><span>{{ $gift->address }}</span></p>
+                                            <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0" style="font-size: 0.75rem;" data-copy="{{ $gift->address }}"><i class="fa-solid fa-copy"></i></button>
+                                        </div>
+                                    @endif
                                 </div>
                             @endforeach
                         @endforeach
@@ -743,19 +740,14 @@
                 <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;" id="welcome-couple-name">{{ $wedding->coupleNames() }}</h2>
                 <div id="guest-name" data-message="Kepada Yth. Bapak/Ibu/Saudara/i"></div>
 
-                <button type="button" class="btn btn-light shadow rounded-4 mt-3 mx-auto" onclick="undangan.guest.open(this)"><i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Open Invitation</button>
+                <button type="button" class="btn btn-light shadow rounded-4 mt-3 mx-auto" onclick="undangan.guest.open(this)"><i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Buka Undangan</button>
 
                 <noscript>
                     <small class="mt-3 text-danger">Mohon maaf, undangan ini membutuhkan javascript untuk dapat dibuka.</small>
                 </noscript>
             </div>
         </div>
-        <div class="text-center position-fixed w-100" style="bottom: 8%; left: 0;">
-            <div class="d-flex flex-column">
-                <small class="text-secondary">from</small>
-                <small class="text-theme-auto"><i class="fa-brands fa-github me-1"></i>{{ $wedding->groom_short_name }}</small>
-            </div>
-        </div>
+      
     </div>
 
     <!-- Button Group -->
@@ -846,6 +838,19 @@
                         AOS.init();
                         AOS.refresh();
                     }
+
+                    let autoScrollStopped = false;
+                    const stopAutoScroll = () => { autoScrollStopped = true; window.removeEventListener('touchstart', stopAutoScroll); window.removeEventListener('wheel', stopAutoScroll); };
+                    window.addEventListener('touchstart', stopAutoScroll, { once: true });
+                    window.addEventListener('wheel', stopAutoScroll, { once: true });
+
+                    const autoScroll = setInterval(() => {
+                        if (autoScrollStopped || (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 10) {
+                            clearInterval(autoScroll);
+                            return;
+                        }
+                        window.scrollBy({ top: 1, behavior: 'auto' });
+                    }, 80);
                 },
                 name: () => {
                     const el = document.getElementById('guest-name');
@@ -1055,6 +1060,13 @@
                 countdown();
                 comment();
                 modalImage();
+
+                document.addEventListener('click', (e) => {
+                    const btn = e.target.closest('[data-copy]');
+                    if (btn) {
+                        util.copy(btn);
+                    }
+                });
             };
 
             if (document.readyState === 'loading') {

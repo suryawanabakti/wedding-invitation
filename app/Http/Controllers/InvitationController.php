@@ -25,7 +25,7 @@ class InvitationController extends Controller
         return view('welcome', [
             'wedding' => $wedding,
             'galleries' => $galleries,
-            'galleryChunks' => $galleries->chunk(3),
+            'galleryChunks' => $galleries->chunk(6),
             'quotes' => $quotes,
             'transferGifts' => $gifts->get(LoveGift::TYPE_TRANSFER, collect()),
             'qrisGifts' => $gifts->get(LoveGift::TYPE_QRIS, collect()),
