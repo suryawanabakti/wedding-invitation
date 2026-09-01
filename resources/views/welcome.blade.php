@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" data-bs-theme="light">
+<html lang="id" data-bs-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
@@ -323,6 +323,168 @@
         .like-btn.active {
             color: var(--bs-danger) !important;
         }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        .heart-float {
+            position: fixed;
+            bottom: -20px;
+            animation: floatHeart linear forwards;
+            pointer-events: none;
+            z-index: 9999;
+            color: #e74c3c;
+            font-size: 1rem;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .shimmer-text {
+            background: linear-gradient(90deg, var(--bs-dark) 0%, #e74c3c 25%, var(--bs-dark) 50%, #e74c3c 75%, var(--bs-dark) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s linear infinite;
+        }
+
+        html[data-bs-theme="dark"] .shimmer-text {
+            background: linear-gradient(90deg, var(--bs-light) 0%, #ff6b6b 25%, var(--bs-light) 50%, #ff6b6b 75%, var(--bs-light) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #welcome .font-esthetic {
+            animation: fadeInUp 1.5s ease forwards;
+        }
+
+        #welcome #welcome-couple-name {
+            animation: fadeInUp 1.5s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        #welcome #guest-name {
+            animation: fadeIn 1.5s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        #welcome .btn {
+            animation: scaleIn 1s ease 1s forwards;
+            opacity: 0;
+        }
+
+        .orb-container {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+        }
+
+        .orb-green-1 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, #2ecc71 0%, transparent 70%);
+            top: -80px;
+            left: -60px;
+            animation: orbFloat1 8s ease-in-out infinite;
+        }
+
+        .orb-green-2 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, #27ae60 0%, transparent 70%);
+            bottom: -60px;
+            right: -40px;
+            animation: orbFloat2 10s ease-in-out infinite;
+        }
+
+        .orb-white-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+            top: 20%;
+            right: -100px;
+            animation: orbFloat3 12s ease-in-out infinite;
+        }
+
+        .orb-white-2 {
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, transparent 70%);
+            bottom: 10%;
+            left: -50px;
+            animation: orbFloat4 9s ease-in-out infinite;
+        }
+
+        .orb-green-3 {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #1abc9c 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            animation: orbFloat5 11s ease-in-out infinite;
+        }
+
+        @keyframes orbFloat1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(40px, 30px) scale(1.1); }
+            50% { transform: translate(-20px, 60px) scale(0.95); }
+            75% { transform: translate(30px, -20px) scale(1.05); }
+        }
+
+        @keyframes orbFloat2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-50px, -40px) scale(1.15); }
+            66% { transform: translate(30px, -20px) scale(0.9); }
+        }
+
+        @keyframes orbFloat3 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(-60px, 40px) scale(1.1); }
+            50% { transform: translate(-30px, -30px) scale(1.05); }
+            75% { transform: translate(20px, 50px) scale(0.95); }
+        }
+
+        @keyframes orbFloat4 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(50px, -40px) scale(1.2); }
+        }
+
+        @keyframes orbFloat5 {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            33% { transform: translate(-30%, -60%) scale(1.15); }
+            66% { transform: translate(-60%, -40%) scale(0.9); }
+        }
     </style>
 </head>
 
@@ -337,95 +499,97 @@
             <main data-bs-spy="scroll" data-bs-target="#navbar-menu" data-bs-root-margin="25% 0% 0% 0%" data-bs-smooth-scroll="true" tabindex="0">
 
                 <!-- Home -->
-                <section id="home" class="bg-light-dark position-relative overflow-hidden p-0 m-0">
-                    <img src="{{ $wedding->imageUrl('background_image', 'wedding-bg') }}" alt="bg" class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home">
+                <section id="home" class="bg-light-dark position-relative overflow-hidden p-0 m-0" style="height: 100vh;">
+                    <img src="{{ $wedding->imageUrl('background_image', 'wedding-bg') }}" alt="bg" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.4) 100%);"></div>
 
-                    <div class="position-relative text-center bg-overlay-auto" style="background-color: unset;">
-                        <h1 class="font-esthetic pt-5 pb-4 fw-medium" style="font-size: 2.25rem;">Undangan Pernikahan</h1>
+                    <div class="position-relative text-center d-flex flex-column justify-content-center align-items-center h-100" style="background-color: unset;">
+                        <h1 class="font-esthetic pt-5 pb-4 fw-medium text-white" style="font-size: 2.25rem;">Undangan Pernikahan</h1>
 
-                        <img src="{{ $wedding->imageUrl('cover_photo', 'couple') }}" alt="bg" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto" id="home-profile-photo">
-
-                        <h2 class="font-esthetic my-4" style="font-size: 2.25rem;" id="home-couple-name">{{ $wedding->coupleNames() }}</h2>
-                        <p class="my-2" style="font-size: 1.25rem;" id="home-wedding-day">{{ $wedding->wedding_at->locale('id')->translatedFormat('l, d F Y') }}</p>
+                        <h2 class="font-esthetic my-4 shimmer-text" style="font-size: 2.25rem;" id="home-couple-name">{{ $wedding->coupleNames() }}</h2>
+                        <p class="my-2 text-white" style="font-size: 1.25rem;" id="home-wedding-day">{{ $wedding->wedding_at->locale('id')->translatedFormat('l, d F Y') }}</p>
 
                         <a href="{{ $wedding->googleCalendarUrl() }}"
                             target="_blank"
-                            class="btn btn-outline-auto btn-sm shadow rounded-pill px-3 py-1" style="font-size: 0.825rem;">
+                            class="btn btn-light btn-sm shadow rounded-pill px-3 py-1" style="font-size: 0.825rem;">
                             <i class="fa-solid fa-calendar-check me-2"></i>Simpan di Kalender
                         </a>
 
                         <div class="d-flex justify-content-center align-items-center mt-4 mb-2">
-                            <div class="mouse-animation border border-secondary border-2 rounded-5 px-2 py-1 opacity-50">
-                                <div class="scroll-animation rounded-4 bg-secondary"></div>
+                            <div class="mouse-animation border border-light border-2 rounded-5 px-2 py-1 opacity-75">
+                                <div class="scroll-animation rounded-4 bg-light"></div>
                             </div>
                         </div>
 
-                        <p class="pb-4 m-0 text-secondary" style="font-size: 0.825rem;">Scroll Down</p>
+                        <p class="pb-4 m-0 text-white opacity-75" style="font-size: 0.825rem;">Scroll Down</p>
                     </div>
                 </section>
 
-                <!-- Wave Separator -->
-                <div class="svg-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="color-theme-svg no-gap-bottom">
-                        <path fill="currentColor" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,165.3C672,160,768,96,864,96C960,96,1056,160,1152,154.7C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-                    </svg>
-                </div>
-
                 <!-- Bride -->
-                <section class="bg-white-black text-center" id="bride">
-                    <h2 class="font-arabic py-4 m-0" style="font-size: 2rem;">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
-                    <h2 class="font-esthetic py-4 m-0" style="font-size: 2rem;">Assalamualaikum Warahmatullahi Wabarakatuh</h2>
-                    <p class="pb-4 px-2 m-0" style="font-size: 0.95rem;">Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan menghadiri acara pernikahan kami:</p>
+                <section class="text-center position-relative overflow-hidden" id="bride">
+                    <video autoplay muted loop playsinline class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover; z-index: 0;">
+                        <source src="{{ asset('background.mp4') }}" type="video/mp4">
+                    </video>
+                    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.4); z-index: 1;"></div>
+                    <div class="orb-container" style="z-index: 2;">
+                        <div class="orb orb-green-1"></div>
+                        <div class="orb orb-white-1"></div>
+                        <div class="orb orb-green-3"></div>
+                    </div>
+                    <div class="position-relative" style="z-index: 3;">
+                    <h2 class="font-arabic py-4 m-0 text-white" style="font-size: 2rem;">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
+                    <h2 class="font-esthetic py-4 m-0 text-white" style="font-size: 2rem;">Assalamualaikum Warahmatullahi Wabarakatuh</h2>
+                    <p class="pb-4 px-2 m-0 text-white" style="font-size: 0.95rem;">Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan menghadiri acara pernikahan kami:</p>
 
                     <div class="overflow-x-hidden pb-4">
 
                         <div class="position-relative">
                             <!-- Love animation -->
                             <div class="position-absolute" style="top: 0%; right: 5%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="opacity-50 animate-love" style="animation-delay: 500ms;" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-white opacity-75 animate-love" style="animation-delay: 500ms;" viewBox="0 0 16 16">
                                     <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
                                 </svg>
                             </div>
 
                             <div data-aos="fade-right" data-aos-duration="2000" class="pb-1">
                                 <img src="{{ $wedding->imageUrl('groom_photo', 'groom') }}" alt="cowo" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto" id="groom-photo">
-                                <h2 class="font-esthetic m-0" style="font-size: 2.125rem;" id="groom-name">{{ $wedding->groom_full_name }}</h2>
-                                <p class="mt-3 mb-1" style="font-size: 1.25rem;" id="groom-title">{{ $wedding->groom_title }}</p>
-                                <p class="mb-0" style="font-size: 0.95rem;" id="groom-father">{{ $wedding->groom_father }}</p>
-                                <p class="mb-0" style="font-size: 0.95rem;">dan</p>
-                                <p class="mb-0" style="font-size: 0.95rem;" id="groom-mother">{{ $wedding->groom_mother }}</p>
+                                <h2 class="font-esthetic m-0 text-white" style="font-size: 2.125rem;" id="groom-name">{{ $wedding->groom_full_name }}</h2>
+                                <p class="mt-3 mb-1 text-white" style="font-size: 1.25rem;" id="groom-title">{{ $wedding->groom_title }}</p>
+                                <p class="mb-0 text-white" style="font-size: 0.95rem;" id="groom-father">{{ $wedding->groom_father }}</p>
+                                <p class="mb-0 text-white" style="font-size: 0.95rem;">dan</p>
+                                <p class="mb-0 text-white" style="font-size: 0.95rem;" id="groom-mother">{{ $wedding->groom_mother }}</p>
                             </div>
 
                             <!-- Love animation -->
                             <div class="position-absolute" style="top: 90%; left: 5%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="opacity-50 animate-love" style="animation-delay: 2000ms;" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-white opacity-75 animate-love" style="animation-delay: 2000ms;" viewBox="0 0 16 16">
                                     <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
                                 </svg>
                             </div>
                         </div>
 
-                        <h2 class="font-esthetic mt-4" style="font-size: 4.5rem;">&amp;</h2>
+                        <h2 class="font-esthetic mt-4 text-white" style="font-size: 4.5rem;">&amp;</h2>
 
                         <div class="position-relative">
                             <!-- Love animation -->
                             <div class="position-absolute" style="top: 0%; right: 5%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="opacity-50 animate-love" style="animation-delay: 3000ms;" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-white opacity-75 animate-love" style="animation-delay: 3000ms;" viewBox="0 0 16 16">
                                     <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
                                 </svg>
                             </div>
 
                             <div data-aos="fade-left" data-aos-duration="2000" class="pb-1">
                                 <img src="{{ $wedding->imageUrl('bride_photo', 'bride') }}" alt="cewe" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto" id="bride-photo">
-                                <h2 class="font-esthetic m-0" style="font-size: 2.125rem;" id="bride-name">{{ $wedding->bride_full_name }}</h2>
-                                <p class="mt-3 mb-1" style="font-size: 1.25rem;" id="bride-title">{{ $wedding->bride_title }}</p>
-                                <p class="mb-0" style="font-size: 0.95rem;" id="bride-father">{{ $wedding->bride_father }}</p>
-                                <p class="mb-0" style="font-size: 0.95rem;">dan</p>
-                                <p class="mb-0" style="font-size: 0.95rem;" id="bride-mother">{{ $wedding->bride_mother }}</p>
+                                <h2 class="font-esthetic m-0 text-white" style="font-size: 2.125rem;" id="bride-name">{{ $wedding->bride_full_name }}</h2>
+                                <p class="mt-3 mb-1 text-white" style="font-size: 1.25rem;" id="bride-title">{{ $wedding->bride_title }}</p>
+                                <p class="mb-0 text-white" style="font-size: 0.95rem;" id="bride-father">{{ $wedding->bride_father }}</p>
+                                <p class="mb-0 text-white" style="font-size: 0.95rem;">dan</p>
+                                <p class="mb-0 text-white" style="font-size: 0.95rem;" id="bride-mother">{{ $wedding->bride_mother }}</p>
                             </div>
 
                             <!-- Love animation -->
                             <div class="position-absolute" style="top: 90%; left: 5%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="opacity-50 animate-love" style="animation-delay: 2500ms;" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-white opacity-75 animate-love" style="animation-delay: 2500ms;" viewBox="0 0 16 16">
                                     <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
                                 </svg>
                             </div>
@@ -441,8 +605,12 @@
                 </div>
 
                 <!-- Firman Allah Subhanahu Wa Ta'ala -->
-                <section class="bg-light-dark pt-2 pb-4">
-                    <div class="container text-center">
+                <section class="bg-light-dark pt-2 pb-4 position-relative overflow-hidden">
+                    <div class="orb-container">
+                        <div class="orb orb-green-2"></div>
+                        <div class="orb orb-white-2"></div>
+                    </div>
+                    <div class="container text-center position-relative" style="z-index: 1;">
                         <h2 class="font-esthetic pt-2 pb-1 m-0" style="font-size: 2rem;">Allah Subhanahu Wa Ta'ala berfirman</h2>
 
                         @foreach ($quotes as $quote)
@@ -462,8 +630,12 @@
                 </div>
 
                 <!-- Wedding Date -->
-                <section class="bg-white-black pb-2" id="wedding-date">
-                    <div class="container text-center">
+                <section class="bg-white-black pb-2 position-relative overflow-hidden" id="wedding-date">
+                    <div class="orb-container">
+                        <div class="orb orb-white-1"></div>
+                        <div class="orb orb-green-1"></div>
+                    </div>
+                    <div class="container text-center position-relative" style="z-index: 1;">
                         <h2 class="font-esthetic py-4 m-0" style="font-size: 2.25rem;">Moment Bahagia</h2>
 
                         <div class="border rounded-pill shadow py-2 px-4 mt-2 mb-4">
@@ -523,8 +695,13 @@
                 </section>
 
                 <!-- Gallery -->
-                <section class="bg-white-black pb-5 pt-3" id="gallery">
-                    <div class="container">
+                <section class="bg-white-black pb-5 pt-3 position-relative overflow-hidden" id="gallery">
+                    <div class="orb-container">
+                        <div class="orb orb-green-2"></div>
+                        <div class="orb orb-white-2"></div>
+                        <div class="orb orb-green-3"></div>
+                    </div>
+                    <div class="container position-relative" style="z-index: 1;">
                         <div class="border rounded-5 shadow p-3">
 
                             <h2 class="font-esthetic text-center py-2 m-0" style="font-size: 2.25rem;">Galeri</h2>
@@ -568,8 +745,12 @@
                 </div>
 
                 <!-- Love Gift -->
-                <section class="bg-light-dark pb-3">
-                    <div class="container text-center">
+                <section class="bg-light-dark pb-3 position-relative overflow-hidden">
+                    <div class="orb-container">
+                        <div class="orb orb-white-1"></div>
+                        <div class="orb orb-green-1"></div>
+                    </div>
+                    <div class="container text-center position-relative" style="z-index: 1;">
                         <h2 class="font-esthetic pt-3 mb-4" style="font-size: 2.25rem;">Love Gift</h2>
                         <p class="mb-1" style="font-size: 0.95rem;">Dengan hormat, bagi Anda yang ingin memberikan tanda kasih kepada kami, dapat melalui:</p>
 
@@ -612,8 +793,12 @@
                 </section>
 
                 <!-- Comment -->
-                <section class="bg-light-dark my-0 pb-0 pt-3" id="comment">
-                    <div class="container">
+                <section class="bg-light-dark my-0 pb-0 pt-3 position-relative overflow-hidden" id="comment">
+                    <div class="orb-container">
+                        <div class="orb orb-green-2"></div>
+                        <div class="orb orb-white-2"></div>
+                    </div>
+                    <div class="container position-relative" style="z-index: 1;">
                         <div class="border rounded-5 shadow p-3 mb-2">
                             <h2 class="font-esthetic text-center mt-2 mb-4" style="font-size: 2.25rem;">Ucapan &amp; Doa</h2>
 
@@ -675,8 +860,13 @@
                 </div>
 
                 <!-- End Of Invitation -->
-                <section class="bg-white-black py-2 no-gap-bottom">
-                    <div class="container text-center">
+                <section class="bg-white-black py-2 no-gap-bottom position-relative overflow-hidden">
+                    <div class="orb-container">
+                        <div class="orb orb-green-1"></div>
+                        <div class="orb orb-white-1"></div>
+                        <div class="orb orb-green-3"></div>
+                    </div>
+                    <div class="container text-center position-relative" style="z-index: 1;">
                         <p class="pb-2 pt-4" style="font-size: 0.95rem;">Terima kasih atas perhatian dan doa restu Anda, yang menjadi kebahagiaan serta kehormatan besar bagi kami.</p>
 
                         <h2 class="font-esthetic" style="font-size: 2rem;">Wassalamualaikum Warahmatullahi Wabarakatuh</h2>
@@ -737,7 +927,7 @@
 
                 <img src="{{ $wedding->imageUrl('cover_photo', 'couple') }}" alt="background" class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto" id="welcome-profile-photo">
 
-                <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;" id="welcome-couple-name">{{ $wedding->coupleNames() }}</h2>
+                <h2 class="font-esthetic shimmer-text mb-4" style="font-size: 2.25rem;" id="welcome-couple-name">{{ $wedding->coupleNames() }}</h2>
                 <div id="guest-name" data-message="Kepada Yth. Bapak/Ibu/Saudara/i"></div>
 
                 <button type="button" class="btn btn-light shadow rounded-4 mt-3 mx-auto" onclick="undangan.guest.open(this)"><i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Buka Undangan</button>
@@ -752,13 +942,8 @@
 
     <!-- Button Group -->
     <div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 1030;">
-        <!-- Theme Button -->
-        <button type="button" id="button-theme" class="btn bg-light-dark border btn-sm rounded-circle btn-transparent shadow-sm d-none" aria-label="Change theme" onclick="undangan.theme.change()">
-            <i class="fa-solid fa-circle-half-stroke"></i>
-        </button>
-
         <!-- Music Button -->
-        <button type="button" id="button-music" class="btn bg-light-dark border btn-sm rounded-circle btn-transparent shadow-sm mt-2 d-none" aria-label="Play or pause music" onclick="undangan.music.toggle()">
+        <button type="button" id="button-music" class="btn bg-light-dark border btn-sm rounded-circle btn-transparent shadow-sm d-none" aria-label="Play or pause music" onclick="undangan.music.toggle()">
             <i class="fa-solid fa-compact-disc"></i>
         </button>
     </div>
@@ -830,7 +1015,6 @@
                     root.classList.remove('opacity-0');
                     document.body.classList.remove('overflow-hidden');
 
-                    document.getElementById('button-theme').classList.remove('d-none');
                     music.play();
                     window.scrollTo(0, 0);
 
@@ -838,6 +1022,8 @@
                         AOS.init();
                         AOS.refresh();
                     }
+
+                    createFloatingHearts();
 
                     let autoScrollStopped = false;
                     const stopAutoScroll = () => { autoScrollStopped = true; window.removeEventListener('touchstart', stopAutoScroll); window.removeEventListener('wheel', stopAutoScroll); };
@@ -904,10 +1090,7 @@
             };
 
             const theme = {
-                change: () => {
-                    const html = document.documentElement;
-                    html.setAttribute('data-bs-theme', html.getAttribute('data-bs-theme') === 'light' ? 'dark' : 'light');
-                },
+                change: () => {},
             };
 
             const util = {
@@ -1053,6 +1236,22 @@
                         modal.show();
                     });
                 });
+            };
+
+            const createFloatingHearts = () => {
+                const hearts = ['❤️', '💕', '💗', '💖', '💘', '💝'];
+                for (let i = 0; i < 15; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.className = 'heart-float';
+                        heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                        heart.style.left = Math.random() * 100 + 'vw';
+                        heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                        heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
+                        document.body.appendChild(heart);
+                        setTimeout(() => heart.remove(), 7000);
+                    }, i * 300);
+                }
             };
 
             const init = () => {
