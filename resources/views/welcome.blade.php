@@ -544,13 +544,6 @@
                     <div class="overflow-x-hidden pb-4">
 
                         <div class="position-relative">
-                            <!-- Love animation -->
-                            <div class="position-absolute" style="top: 0%; right: 5%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-white opacity-75 animate-love" style="animation-delay: 500ms;" viewBox="0 0 16 16">
-                                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                                </svg>
-                            </div>
-
                             <div data-aos="fade-right" data-aos-duration="2000" class="pb-1">
                                 <img src="{{ $wedding->imageUrl('groom_photo', 'groom') }}" alt="cowo" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto" id="groom-photo">
                                 <h2 class="font-esthetic m-0 text-white" style="font-size: 2.125rem;" id="groom-name">{{ $wedding->groom_full_name }}</h2>
@@ -559,25 +552,11 @@
                                 <p class="mb-0 text-white" style="font-size: 0.95rem;">dan</p>
                                 <p class="mb-0 text-white" style="font-size: 0.95rem;" id="groom-mother">{{ $wedding->groom_mother }}</p>
                             </div>
-
-                            <!-- Love animation -->
-                            <div class="position-absolute" style="top: 90%; left: 5%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-white opacity-75 animate-love" style="animation-delay: 2000ms;" viewBox="0 0 16 16">
-                                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                                </svg>
-                            </div>
                         </div>
 
                         <h2 class="font-esthetic mt-4 text-white" style="font-size: 4.5rem;">&amp;</h2>
 
                         <div class="position-relative">
-                            <!-- Love animation -->
-                            <div class="position-absolute" style="top: 0%; right: 5%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-white opacity-75 animate-love" style="animation-delay: 3000ms;" viewBox="0 0 16 16">
-                                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                                </svg>
-                            </div>
-
                             <div data-aos="fade-left" data-aos-duration="2000" class="pb-1">
                                 <img src="{{ $wedding->imageUrl('bride_photo', 'bride') }}" alt="cewe" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto" id="bride-photo">
                                 <h2 class="font-esthetic m-0 text-white" style="font-size: 2.125rem;" id="bride-name">{{ $wedding->bride_full_name }}</h2>
@@ -585,13 +564,6 @@
                                 <p class="mb-0 text-white" style="font-size: 0.95rem;" id="bride-father">{{ $wedding->bride_father }}</p>
                                 <p class="mb-0 text-white" style="font-size: 0.95rem;">dan</p>
                                 <p class="mb-0 text-white" style="font-size: 0.95rem;" id="bride-mother">{{ $wedding->bride_mother }}</p>
-                            </div>
-
-                            <!-- Love animation -->
-                            <div class="position-absolute" style="top: 90%; left: 5%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="text-white opacity-75 animate-love" style="animation-delay: 2500ms;" viewBox="0 0 16 16">
-                                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                                </svg>
                             </div>
                         </div>
                     </div>
@@ -657,15 +629,6 @@
 
                         <p class="py-2 m-0" style="font-size: 0.95rem;">Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, insyaAllah kami akan menyelenggarakan acara:</p>
 
-                        <!-- Love animation -->
-                        <div class="position-relative">
-                            <div class="position-absolute" style="top: 0%; right: 5%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="opacity-50 animate-love" style="animation-delay: 3000ms;" viewBox="0 0 16 16">
-                                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                                </svg>
-                            </div>
-                        </div>
-
                         <div class="overflow-x-hidden">
                             <div class="py-2" data-aos="fade-right" data-aos-duration="1500">
                                 <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem;">Akad</h2>
@@ -675,15 +638,6 @@
                             <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
                                 <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem;">Resepsi</h2>
                                 <p style="font-size: 0.95rem;" id="resepsi-time">{{ $wedding->resepsi_time }}</p>
-                            </div>
-                        </div>
-
-                        <!-- Love animation -->
-                        <div class="position-relative">
-                            <div class="position-absolute" style="top: 0%; left: 5%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="opacity-50 animate-love" style="animation-delay: 2000ms;" viewBox="0 0 16 16">
-                                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                                </svg>
                             </div>
                         </div>
 
