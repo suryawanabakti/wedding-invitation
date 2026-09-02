@@ -528,7 +528,7 @@
                 <!-- Bride -->
                 <section class="text-center position-relative overflow-hidden" id="bride">
                     <video autoplay muted loop playsinline class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover; z-index: 0;">
-                        <source src="{{ asset('background.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('bg2.mp4') }}" type="video/mp4">
                     </video>
                     <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.4); z-index: 1;"></div>
                     <div class="orb-container" style="z-index: 2;">
