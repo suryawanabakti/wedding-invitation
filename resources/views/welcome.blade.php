@@ -501,10 +501,10 @@
                 <!-- Home -->
                 <section id="home" class="bg-light-dark position-relative overflow-hidden p-0 m-0" style="height: 100vh;">
                     <img src="{{ $wedding->imageUrl('background_image', 'wedding-bg') }}" alt="bg" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;">
-                    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.4) 100%);"></div>
+                    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.55) 100%);"></div>
 
-                    <div class="position-relative text-center d-flex flex-column justify-content-center align-items-center h-100" style="background-color: unset;">
-                        <h1 class="font-esthetic pt-5 pb-4 fw-medium text-white" style="font-size: 2.25rem;">Undangan Pernikahan</h1>
+                    <div class="position-relative text-center d-flex flex-column justify-content-start align-items-center h-100" style="background-color: unset;">
+                        <h1 class="font-esthetic pt-4 pb-4 fw-medium text-white" style="font-size: 2.25rem;">Undangan Pernikahan</h1>
 
                         <h2 class="font-esthetic my-4 shimmer-text" style="font-size: 2.25rem;" id="home-couple-name">{{ $wedding->coupleNames() }}</h2>
                         <p class="my-2 text-white" style="font-size: 1.25rem;" id="home-wedding-day">{{ $wedding->wedding_at->locale('id')->translatedFormat('l, d F Y') }}</p>
