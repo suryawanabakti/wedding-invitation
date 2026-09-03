@@ -199,6 +199,11 @@
             animation: spin-icon 5s linear infinite;
         }
 
+        @keyframes wave-slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
         @keyframes love {
             50% {
                 transform: translateY(1rem);
@@ -512,9 +517,17 @@
 
                 <!-- Bride -->
                 <section class="text-center position-relative overflow-hidden" id="bride">
-                    <video autoplay muted loop playsinline class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover; z-index: 0;">
-                        <source src="{{ asset('bg2.mp4') }}" type="video/mp4">
-                    </video>
+                    <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 0; overflow: hidden; background: linear-gradient(180deg, #1a3a2a 0%, #0d1f15 100%);">
+                        <svg viewBox="0 0 1440 320" preserveAspectRatio="none" class="position-absolute bottom-0 start-0" style="width: 200%; height: 60%; animation: wave-slide 8s linear infinite;">
+                            <path fill="rgba(255,255,255,0.05)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                        </svg>
+                        <svg viewBox="0 0 1440 320" preserveAspectRatio="none" class="position-absolute bottom-0 start-0" style="width: 200%; height: 50%; animation: wave-slide 10s linear infinite reverse;">
+                            <path fill="rgba(255,255,255,0.03)" d="M0,256L48,240C96,224,192,192,288,186.7C384,181,480,203,576,218.7C672,235,768,245,864,229.3C960,213,1056,171,1152,165.3C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                        </svg>
+                        <svg viewBox="0 0 1440 320" preserveAspectRatio="none" class="position-absolute bottom-0 start-0" style="width: 200%; height: 40%; animation: wave-slide 12s linear infinite;">
+                            <path fill="rgba(255,255,255,0.02)" d="M0,288L48,272C96,256,192,224,288,213.3C384,203,480,213,576,229.3C672,245,768,267,864,261.3C960,256,1056,224,1152,218.7C1248,213,1344,235,1392,245.3L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                        </svg>
+                    </div>
                     <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.4); z-index: 1;"></div>
                     <div class="orb-container" style="z-index: 2;">
                         <div class="orb orb-green-1"></div>
