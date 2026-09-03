@@ -37,11 +37,17 @@ class SettingController extends Controller
             'resepsi_time' => ['required', 'string', 'max:100'],
             'address' => ['required', 'string', 'max:500'],
             'maps_url' => ['nullable', 'url', 'max:500'],
+            'tudang_penni_enabled' => ['nullable'],
+            'tudang_penni_time' => ['nullable', 'string', 'max:100'],
+            'tudang_penni_address' => ['nullable', 'string', 'max:500'],
+            'tudang_penni_maps_url' => ['nullable', 'url', 'max:500'],
             'cover_photo_file' => ['nullable', 'image', 'max:4096'],
             'background_image_file' => ['nullable', 'image', 'max:4096'],
             'groom_photo_file' => ['nullable', 'image', 'max:4096'],
             'bride_photo_file' => ['nullable', 'image', 'max:4096'],
         ]);
+
+        $validated['tudang_penni_enabled'] = $request->boolean('tudang_penni_enabled');
 
         foreach (['cover_photo', 'background_image', 'groom_photo', 'bride_photo'] as $field) {
             if ($request->hasFile($field.'_file')) {

@@ -83,6 +83,28 @@
                 </div>
             </div>
 
+            <h2 class="h5 mb-3"><i class="fa-solid fa-moon me-2 text-info"></i>Tudang Penni (Malam Mappacci)</h2>
+            <div class="row g-3 mb-4">
+                <div class="col-12">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="tudang_penni_enabled" name="tudang_penni_enabled" value="1" {{ old('tudang_penni_enabled', $wedding->tudang_penni_enabled) ? 'checked' : '' }}>
+                        <label class="form-check-label" for="tudang_penni_enabled">Tampilkan Acara Tudang Penni</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="tudang_penni_time" class="form-label">Tanggal &amp; Jam</label>
+                    <input id="tudang_penni_time" name="tudang_penni_time" type="text" class="form-control" value="{{ old('tudang_penni_time', $wedding->tudang_penni_time) }}" maxlength="100" placeholder="Contoh: Jumat, 12 September 2026, 19:00 - 22:00 WITA">
+                </div>
+                <div class="col-md-8">
+                    <label for="tudang_penni_address" class="form-label">Lokasi / Alamat</label>
+                    <textarea id="tudang_penni_address" name="tudang_penni_address" rows="2" class="form-control" maxlength="500" placeholder="Alamat lokasi Tudang Penni di Makassar">{{ old('tudang_penni_address', $wedding->tudang_penni_address) }}</textarea>
+                </div>
+                <div class="col-12">
+                    <label for="tudang_penni_maps_url" class="form-label">Link Google Maps</label>
+                    <input id="tudang_penni_maps_url" name="tudang_penni_maps_url" type="url" class="form-control" value="{{ old('tudang_penni_maps_url', $wedding->tudang_penni_maps_url) }}" placeholder="https://...">
+                </div>
+            </div>
+
             <h2 class="h5 mb-3"><i class="fa-solid fa-camera me-2 text-warning"></i>Gambar</h2>
             <div class="row g-3">
                 @foreach ([

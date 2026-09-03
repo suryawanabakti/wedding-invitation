@@ -27,6 +27,10 @@ use Illuminate\Database\Eloquent\Model;
     'resepsi_time',
     'address',
     'maps_url',
+    'tudang_penni_enabled',
+    'tudang_penni_time',
+    'tudang_penni_address',
+    'tudang_penni_maps_url',
 ])]
 class Wedding extends Model
 {
@@ -37,6 +41,7 @@ class Wedding extends Model
     {
         return [
             'wedding_at' => 'datetime',
+            'tudang_penni_enabled' => 'boolean',
         ];
     }
 

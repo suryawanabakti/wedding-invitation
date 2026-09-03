@@ -339,21 +339,6 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        @keyframes floatHeart {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
-        }
-
-        .heart-float {
-            position: fixed;
-            bottom: -20px;
-            animation: floatHeart linear forwards;
-            pointer-events: none;
-            z-index: 9999;
-            color: #e74c3c;
-            font-size: 1rem;
-        }
-
         @keyframes shimmer {
             0% { background-position: -200% center; }
             100% { background-position: 200% center; }
@@ -600,6 +585,38 @@
                         <path fill="currentColor" fill-opacity="1" d="M0,96L30,106.7C60,117,120,139,180,154.7C240,171,300,181,360,186.7C420,192,480,192,540,181.3C600,171,660,149,720,154.7C780,160,840,192,900,208C960,224,1020,224,1080,208C1140,192,1200,160,1260,138.7C1320,117,1380,107,1410,101.3L1440,96L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
                     </svg>
                 </div>
+
+                @if ($wedding->tudang_penni_enabled)
+                <!-- Tudang Penni (Malam Mappacci) -->
+                <section class="bg-white-black pb-2 position-relative overflow-hidden" id="tudang-penni">
+                    <div class="orb-container">
+                        <div class="orb orb-green-2"></div>
+                        <div class="orb orb-white-1"></div>
+                    </div>
+                    <div class="container text-center position-relative" style="z-index: 1;">
+                        <h2 class="font-esthetic py-4 m-0" style="font-size: 2.25rem;">Tudang Penni</h2>
+                        <p class="mb-1" style="font-size: 0.95rem;">Malam Mappacci</p>
+
+                        <div class="overflow-x-hidden">
+                            <div class="py-2" data-aos="fade-down" data-aos-duration="1500">
+                                <p style="font-size: 0.95rem;">{{ $wedding->tudang_penni_time }}</p>
+                            </div>
+
+                            <div class="py-2" data-aos="fade-up" data-aos-duration="1500">
+                                <a href="{{ $wedding->tudang_penni_maps_url ?? '#' }}" target="_blank" rel="noopener" class="btn btn-outline-auto btn-sm rounded-pill shadow mb-2 px-3"><i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google Maps</a>
+                                <small class="d-block my-1">{{ $wedding->tudang_penni_address }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Wave Separator -->
+                <div class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="color-theme-svg no-gap-bottom">
+                        <path fill="currentColor" fill-opacity="1" d="M0,96L30,106.7C60,117,120,139,180,154.7C240,171,300,181,360,186.7C420,192,480,192,540,181.3C600,171,660,149,720,154.7C780,160,840,192,900,208C960,224,1020,224,1080,208C1140,192,1200,160,1260,138.7C1320,117,1380,107,1410,101.3L1440,96L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+                    </svg>
+                </div>
+                @endif
 
                 <!-- Wedding Date -->
                 <section class="bg-white-black pb-2 position-relative overflow-hidden" id="wedding-date">
@@ -856,6 +873,14 @@
                             <span class="d-block" style="font-size: 0.7rem;">Tanggal</span>
                         </a>
                     </li>
+                    @if ($wedding->tudang_penni_enabled)
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tudang-penni">
+                            <i class="fa-solid fa-moon"></i>
+                            <span class="d-block" style="font-size: 0.7rem;">Tudang Penni</span>
+                        </a>
+                    </li>
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link" href="#gallery">
                             <i class="fa-solid fa-images"></i>
@@ -976,8 +1001,6 @@
                         AOS.init();
                         AOS.refresh();
                     }
-
-                    createFloatingHearts();
 
                     let autoScrollStopped = false;
                     const stopAutoScroll = () => { autoScrollStopped = true; window.removeEventListener('touchstart', stopAutoScroll); window.removeEventListener('wheel', stopAutoScroll); };
@@ -1190,22 +1213,6 @@
                         modal.show();
                     });
                 });
-            };
-
-            const createFloatingHearts = () => {
-                const hearts = ['❤️', '💕', '💗', '💖', '💘', '💝'];
-                for (let i = 0; i < 15; i++) {
-                    setTimeout(() => {
-                        const heart = document.createElement('div');
-                        heart.className = 'heart-float';
-                        heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
-                        heart.style.left = Math.random() * 100 + 'vw';
-                        heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
-                        heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
-                        document.body.appendChild(heart);
-                        setTimeout(() => heart.remove(), 7000);
-                    }, i * 300);
-                }
             };
 
             const init = () => {
