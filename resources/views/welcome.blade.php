@@ -881,19 +881,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#wedding-date">
+                        <a class="nav-link" href="#tudang-penni">
                             <i class="fa-solid fa-calendar-check"></i>
                             <span class="d-block" style="font-size: 0.7rem;">Tanggal</span>
                         </a>
                     </li>
-                    @if ($wedding->tudang_penni_enabled)
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tudang-penni">
-                            <i class="fa-solid fa-moon"></i>
-                            <span class="d-block" style="font-size: 0.7rem;">Tudang Penni</span>
-                        </a>
-                    </li>
-                    @endif
+                   
                     <li class="nav-item">
                         <a class="nav-link" href="#gallery">
                             <i class="fa-solid fa-images"></i>
