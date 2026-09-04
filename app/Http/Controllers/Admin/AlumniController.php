@@ -99,7 +99,7 @@ class AlumniController extends Controller
 
         $messages = $alumni->map(function (Alumni $item) use ($coupleNames) {
             $guestName = $item->name;
-            $invitationUrl = 'https://surya-ade.ourwebsite.site/?to=' . urlencode($guestName);
+            $invitationUrl = 'https://surya-adee.ourwebsite.site/?to=' . urlencode($guestName);
 
             $message = "Kepada Yth.\n"
                 . "Bapak/Ibu/Saudara/i\n"
