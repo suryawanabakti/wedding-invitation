@@ -33,6 +33,11 @@
             <i class="fa-solid fa-comments me-2"></i>Ucapan
         </a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link {{ request()->routeIs('admin.alumni.*') ? 'active' : '' }}" href="{{ route('admin.alumni.index') }}">
+            <i class="fa-brands fa-whatsapp me-2"></i>Share WA Alumni
+        </a>
+    </li>
 </ul>
 
 <a href="{{ route('home') }}" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm mt-auto mt-3">

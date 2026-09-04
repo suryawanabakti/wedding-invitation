@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AlumniController;
 use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GalleryController;
@@ -21,6 +22,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('galleries', GalleryController::class)->except(['show', 'create']);
     Route::resource('gifts', LoveGiftController::class)->except(['show', 'create']);
     Route::resource('quotes', QuoteController::class)->except(['show', 'create']);
+
+    Route::resource('alumni', AlumniController::class)->except(['show', 'create']);
+    Route::get('alumni/{alumni}/share', [AlumniController::class, 'shareWhatsApp'])->name('alumni.share');
+    Route::get('alumni-share-all', [AlumniController::class, 'shareAllWhatsApp'])->name('alumni.share-all');
 
     Route::get('comments', [CommentController::class, 'index'])->name('comments.index');
     Route::patch('comments/{comment}/toggle', [CommentController::class, 'toggle'])->name('comments.toggle');
