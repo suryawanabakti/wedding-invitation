@@ -796,7 +796,7 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="form-presence" class="form-label my-1"><i class="fa-solid fa-person-circle-question me-2"></i>Presensi</label>
+                                    <label for="form-presence" class="form-label my-1"><i class="fa-solid fa-person-circle-question me-2"></i>Kehadiran</label>
                                     <select class="form-select shadow-sm rounded-4" id="form-presence" name="presence" autocomplete="off">
                                         @foreach (\App\Models\Comment::presences() as $value => $label)
                                             <option value="{{ $value }}" @selected($value === 0)>@php echo $label; @endphp</option>

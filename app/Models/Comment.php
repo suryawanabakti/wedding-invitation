@@ -24,7 +24,7 @@ class Comment extends Model
     public static function presences(): array
     {
         return [
-            self::PRESENCE_UNCONFIRMED => 'Konfirmasi Presensi',
+            self::PRESENCE_UNCONFIRMED => 'Konfirmasi Kehadiran',
             self::PRESENCE_ATTEND => "\u{2705} Datang",
             self::PRESENCE_ABSENT => "\u{274C} Berhalangan",
         ];
@@ -32,7 +32,7 @@ class Comment extends Model
 
     public function presenceLabel(): string
     {
-        return self::presences()[$this->presence] ?? 'Konfirmasi Presensi';
+        return self::presences()[$this->presence] ?? 'Konfirmasi Kehadiran';
     }
 
     protected function casts(): array
