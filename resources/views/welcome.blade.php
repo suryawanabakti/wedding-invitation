@@ -12,6 +12,8 @@
     <meta property="og:title" content="Undangan Pernikahan {{ $wedding->coupleNames() }}">
     <meta property="og:description" content="Website Undangan Pernikahan {{ $wedding->coupleNames() }} Secara Online">
     <meta property="og:type" content="website">
+    @php $ogImage = $wedding->imageUrl('background_image', 'wedding-bg'); @endphp
+    <meta property="og:image" content="{{ str_starts_with($ogImage, 'http') ? $ogImage : url($ogImage) }}">
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
