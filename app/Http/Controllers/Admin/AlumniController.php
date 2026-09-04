@@ -65,24 +65,24 @@ class AlumniController extends Controller
         $guestName = $alumni->name;
         $groupName = $alumni->group;
         $coupleNames = strtoupper($wedding->coupleNames());
-        $invitationUrl = 'https://surya-ade.ourwebsite.site/?to='.urlencode($guestName);
+        $invitationUrl = 'https://surya-ade.ourwebsite.site/?to=' . urlencode($guestName);
 
         $message = "Kepada Yth.\n"
-            ."Bapak/Ibu/Saudara/i\n"
-            ."*{$groupName}*\n"
-            ."_______\n\n"
-            ."Assalamualaikum Warahmatullahi Wabarakatuh\n\n"
-            ."Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami.\n\n"
-            ."Berikut link undangan kami, untuk info lengkap dari acara, bisa kunjungi :\n\n"
-            ."{$invitationUrl}\n\n"
-            ."Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n"
-            ."Wassalamualaikum Warahmatullahi Wabarakatuh🤍\n\n"
-            ."Terima Kasih\n\n"
-            ."Hormat kami,\n"
-            ."*{$coupleNames}*\n"
-            .'________';
+            . "Bapak/Ibu/Saudara/i\n"
+            . "*{$groupName}*\n"
+            . "_______\n\n"
+            . "Assalamualaikum Warahmatullahi Wabarakatuh\n\n"
+            . "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami.\n\n"
+            . "Berikut link undangan kami, untuk info lengkap dari acara, bisa kunjungi :\n\n"
+            . "{$invitationUrl}\n\n"
+            . "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n"
+            . "Wassalamualaikum Warahmatullahi Wabarakatuh🤍\n\n"
+            . "Terima Kasih\n\n"
+            . "Hormat kami,\n"
+            . "*{$coupleNames}*\n"
+            . '________';
 
-        $whatsappUrl = 'https://wa.me/?text='.urlencode($message);
+        $whatsappUrl = 'https://wa.me/?text=' . urlencode($message);
 
         return view('admin.alumni.share', [
             'alumni' => $alumni,
@@ -101,28 +101,28 @@ class AlumniController extends Controller
         $messages = $alumni->map(function (Alumni $item) use ($coupleNames) {
             $guestName = $item->name;
             $groupName = $item->group;
-            $invitationUrl = 'https://surya-ade.ourwebsite.site/?to='.urlencode($guestName);
+            $invitationUrl = 'https://surya-adee.ourwebsite.site/?to=' . urlencode($guestName);
 
             $message = "Kepada Yth.\n"
-                ."Bapak/Ibu/Saudara/i\n"
-                ."*{$groupName}*\n"
-                ."_______\n\n"
-                ."Assalamualaikum Warahmatullahi Wabarakatuh\n\n"
-                ."Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami.\n\n"
-                ."Berikut link undangan kami, untuk info lengkap dari acara, bisa kunjungi :\n\n"
-                ."{$invitationUrl}\n\n"
-                ."Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n"
-                ."Wassalamualaikum Warahmatullahi Wabarakatuh🤍\n\n"
-                ."Terima Kasih\n\n"
-                ."Hormat kami,\n"
-                ."*{$coupleNames}*\n"
-                .'________';
+                . "Bapak/Ibu/Saudara/i\n"
+                . "*{$groupName}*\n"
+                . "_______\n\n"
+                . "Assalamualaikum Warahmatullahi Wabarakatuh\n\n"
+                . "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami.\n\n"
+                . "Berikut link undangan kami, untuk info lengkap dari acara, bisa kunjungi :\n\n"
+                . "{$invitationUrl}\n\n"
+                . "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n"
+                . "Wassalamualaikum Warahmatullahi Wabarakatuh🤍\n\n"
+                . "Terima Kasih\n\n"
+                . "Hormat kami,\n"
+                . "*{$coupleNames}*\n"
+                . '________';
 
             return [
                 'name' => $item->name,
                 'group' => $item->group,
                 'message' => $message,
-                'whatsapp_url' => 'https://wa.me/?text='.urlencode($message),
+                'whatsapp_url' => 'https://wa.me/?text=' . urlencode($message),
             ];
         });
 
